@@ -5,11 +5,11 @@
 # Palmerston North, New Zealand
 
 # Use program like this on the command line: 
-#     python doplots.py filename x y [startrow] [stoprow]
+#     python doCSVplots.py filename x y [startrow] [stoprow]
 # e.g.
-#     python doplots.py mydata.csv "Date" "Median Value" [startrow] [stoprow]
+#     python doCSVplots.py mydata.csv "Date" "Median Value" [startrow] [stoprow]
 # or if only certain lines are from eg 83 to 2000 are viewed
-#     python doplots.py mydata.csv "Date" "Median Value" 83 2000
+#     python doCSVplots.py mydata.csv "Date" "Median Value" 83 2000
 
 import pandas as pd
 import matplotlib.pyplot as plt

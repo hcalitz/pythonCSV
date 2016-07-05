@@ -1,4 +1,8 @@
 # doCSVplots.py
+# JJ Calitz 
+# July 2016
+# Palmerston North, New Zealand
+
 # Use program like this on the command line: 
 # python doplots.py filename x y [startrow] [stoprow]
 

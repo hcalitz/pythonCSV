@@ -170,8 +170,9 @@ print "Plotting",plotCols, "with", len(df[xvar]),"data points"
 
 #Plot the data 
 fig = plt.figure(1)
-ax = fig.add_subplot(111)
-    
+#ax = fig.add_subplot(111)
+ax = fig.add_axes([0.1, 0.12, 0.6, 0.75])
+
 for ydat in plotCols:
     if usedates:
         if marktext=='None':
@@ -180,9 +181,13 @@ for ydat in plotCols:
             ax.plot(x[startrow:stoprow],df[ydat][startrow:stoprow], label=ydat,marker=marktext, linestyle=linetext)
         fig.autofmt_xdate()
     else:
-	    ax.plot(df[xvar][startrow:stoprow],df[ydat][startrow:stoprow], label=ydat)
-	    
+        if marktext=='None':
+	        ax.plot(df[xvar][startrow:stoprow],df[ydat][startrow:stoprow], label=ydat, linestyle=linetext)
+        else:
+            ax.plot(df[xvar][startrow:stoprow],df[ydat][startrow:stoprow], label=ydat,marker=marktext, linestyle=linetext)
+            	    
 handles, labels = ax.get_legend_handles_labels()
+ax.set_xlabel(xvar)
 lgd = ax.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5))
 
 outfile = ParseCommandline("-o", 1, sys.argv, dfheader.keys())
